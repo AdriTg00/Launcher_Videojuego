@@ -15,11 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QStatusBar, QWidget)
 import resources.resources_rc
-
-
 class Ui_launcher(object):
     def setupUi(self, launcher):
         if not launcher.objectName():
@@ -36,7 +34,7 @@ class Ui_launcher(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(120, 70, 251, 121))
+        self.label_2.setGeometry(QRect(120, 40, 251, 121))
         self.label_2.setPixmap(QPixmap(u":/imagenes/images/el_rey_y_los_cerdos.png"))
         self.label_2.setScaledContents(True)
         self.label_3 = QLabel(self.centralwidget)
@@ -149,6 +147,93 @@ class Ui_launcher(object):
         self.label.setGeometry(QRect(360, 330, 181, 201))
         self.label.setPixmap(QPixmap(u":/imagenes/images/cerdito.png"))
         self.label.setScaledContents(True)
+        self.label_5 = QLabel(self.centralwidget)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(120, 180, 163, 52))
+        self.label_5.setStyleSheet(u"QLabel {\n"
+"    color: #3C3C3C;\n"
+"    font-size: 11px;\n"
+"    font-weight: bold;\n"
+"    padding: 6px;\n"
+"    letter-spacing: 1px;\n"
+"}")
+        self.comboBox = QComboBox(self.centralwidget)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(220, 180, 152, 52))
+        self.comboBox.setMaximumSize(QSize(180, 50))
+        self.comboBox.setStyleSheet(u"/* --- ComboBox principal --- */\n"
+"QComboBox {\n"
+"    font-family: \"Arial\";\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"    padding: 6px 30px 6px 12px;\n"
+"    min-height: 36px;\n"
+"    border-radius: 10px;\n"
+"    background: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 rgba(246, 226, 143, 255),\n"
+"        stop: 1 rgba(236, 198, 70, 255)\n"
+"    );\n"
+"    color: #2b2b2b;              /* texto oscuro, visible */\n"
+"    border: 2px solid rgba(150, 110, 30, 0.6);\n"
+"}\n"
+"\n"
+"/* --- Flecha de desplegable --- */\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 36px;\n"
+"    border: none;\n"
+"    background: transparent;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    width: 0;\n"
+"    height: 0;\n"
+"    margin-right: 10px;\n"
+"    border-left: 6px solid transparent;\n"
+"    border-right: 6px solid transparent;\n"
+"    border-top: 8px solid rgba(70, 40, 10, 0.9); /* color de la flecha */\n"
+"}\n"
+""
+                        "\n"
+"/* --- Cuando el combo est\u00e1 presionado --- */\n"
+"QComboBox:on {\n"
+"    background: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 rgba(240, 210, 110, 255),\n"
+"        stop: 1 rgba(230, 180, 60, 255)\n"
+"    );\n"
+"}\n"
+"\n"
+"/* --- Lista desplegable --- */\n"
+"QComboBox QAbstractItemView {\n"
+"    outline: 0;\n"
+"    background: #fff9e6; /* tono beige claro */\n"
+"    color: #2b2b2b;       /* texto oscuro */\n"
+"    border: 1px solid rgba(150, 110, 30, 0.6);\n"
+"    padding: 6px;\n"
+"    border-radius: 6px;\n"
+"    selection-background-color: rgba(245, 234, 180, 255);\n"
+"    selection-color: black; /* texto visible al seleccionar */\n"
+"}\n"
+"\n"
+"/* --- Items de la lista --- */\n"
+"QComboBox::item {\n"
+"    color: #2b2b2b;\n"
+"    background: transparent;\n"
+"    padding: 4px 10px;\n"
+"}\n"
+"\n"
+"QComboBox::item:selected {\n"
+"    background: rgba(245, 234, 180, 255);\n"
+"    color: black;\n"
+"}\n"
+"")
         launcher.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(launcher)
         self.statusbar.setObjectName(u"statusbar")
@@ -168,5 +253,11 @@ class Ui_launcher(object):
         self.opciones.setText(QCoreApplication.translate("launcher", u"Opciones", None))
         self.salir.setText(QCoreApplication.translate("launcher", u"Salir", None))
         self.label.setText("")
+        self.label_5.setText(QCoreApplication.translate("launcher", u"Idioma:", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("launcher", u"Espa\u00f1ol", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("launcher", u"English", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("launcher", u"Fran\u00e7ais", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("launcher", u"Deutsch", None))
+
     # retranslateUi
 
