@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/imagenes">
+    <file>assets/cerdito.png</file>
+    <file>assets/rey.png</file>
+    <file>assets/rey_y_cerdos.png</file>
+  </qresource>
+</RCC>
