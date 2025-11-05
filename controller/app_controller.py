@@ -1,9 +1,7 @@
-from PySide6.QtWidgets import QMessageBox
-from PySide6.QtCore import Signal
-from views.VentanaInicio import launcher
-from views.cargarPartidas import cargar
-from views.configuracion import configuracion
-from PySide6.QtGui import QPixmap
+from .VentanaInicio import launcher
+from .cargarPartidas import cargar
+from .configuracion import configuracion
+
 
 class AppController:
     def __init__(self):

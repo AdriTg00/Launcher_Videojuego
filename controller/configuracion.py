@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QMessageBox
-from generated.configuracion_ui import Ui_configuracion
+from views.configuracion_ui import Ui_configuracion
 from model.config_bd import guardar_configuracion
 
 

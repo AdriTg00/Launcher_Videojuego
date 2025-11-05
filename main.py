@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication
 from controller.app_controller import AppController
 from model.jugador_bd import inicializar_bd
-
+from resources import resources_rc
 
 def main():
 

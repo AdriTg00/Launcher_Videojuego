@@ -1,7 +1,7 @@
 from functools import partial
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QWidget, QMessageBox
-from generated.partidasGuardadas_ui import Ui_partidaGuardada
+from views.partidasGuardadas_ui import Ui_partidaGuardada
 from model.jugador_bd import cargar_partidas, eliminar_partida as eliminar_partida_bd
 
 

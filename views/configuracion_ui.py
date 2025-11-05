@@ -264,7 +264,7 @@ class Ui_configuracion(object):
 
         self.volumenGeneralSlider = QSlider(configuracion)
         self.volumenGeneralSlider.setObjectName(u"volumenGeneralSlider")
-        self.volumenGeneralSlider.setMaximumSize(QSize(300, 50))
+        self.volumenGeneralSlider.setMaximumSize(QSize(300, 70))
         self.volumenGeneralSlider.setStyleSheet(u"/* --- QSLIDER HORIZONTAL --- */\n"
 "QSlider::groove:horizontal {\n"
 "    border: 2px solid #C9A43A;              /* Contorno dorado */\n"
@@ -372,6 +372,7 @@ class Ui_configuracion(object):
 
         self.volumenSFXSlider = QSlider(configuracion)
         self.volumenSFXSlider.setObjectName(u"volumenSFXSlider")
+        self.volumenSFXSlider.setMaximumSize(QSize(300, 70))
         self.volumenSFXSlider.setStyleSheet(u"/* --- QSLIDER HORIZONTAL --- */\n"
 "QSlider::groove:horizontal {\n"
 "    border: 2px solid #C9A43A;              /* Contorno dorado */\n"

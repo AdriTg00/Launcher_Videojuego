@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QStatusBar, QWidget)
-import recursos_rc
+import resources_rc
 
 class Ui_launcher(object):
     def setupUi(self, launcher):
@@ -36,14 +36,14 @@ class Ui_launcher(object):
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(120, 70, 251, 121))
-        self.label_2.setPixmap(QPixmap(u":/imagenes/assets/rey_y_cerdos.png"))
+        self.label_2.setPixmap(QPixmap(u":/imagenes/images/el_rey_y_los_cerdos.png"))
         self.label_2.setScaledContents(True)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(-50, 300, 211, 241))
         sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
         self.label_3.setSizePolicy(sizePolicy)
-        self.label_3.setPixmap(QPixmap(u":/imagenes/assets/rey.png"))
+        self.label_3.setPixmap(QPixmap(u":/imagenes/images/rey.png"))
         self.label_3.setScaledContents(True)
         self.nuevaPartida = QPushButton(self.centralwidget)
         self.nuevaPartida.setObjectName(u"nuevaPartida")
@@ -146,7 +146,7 @@ class Ui_launcher(object):
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(360, 330, 181, 201))
-        self.label.setPixmap(QPixmap(u":/imagenes/assets/cerdito.png"))
+        self.label.setPixmap(QPixmap(u":/imagenes/images/cerdito.png"))
         self.label.setScaledContents(True)
         launcher.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(launcher)
