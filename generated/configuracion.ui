@@ -361,7 +361,7 @@ QCheckBox:disabled {
      <property name="maximumSize">
       <size>
        <width>300</width>
-       <height>50</height>
+       <height>70</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -485,7 +485,7 @@ QSlider::add-page:vertical {
      <property name="maximumSize">
       <size>
        <width>300</width>
-       <height>50</height>
+       <height>70</height>
       </size>
      </property>
      <property name="styleSheet">
