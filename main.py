@@ -1,4 +1,5 @@
 import sys
+from PySide6.QtCore import QTranslator, QCoreApplication
 from PySide6.QtWidgets import QApplication
 from controller.app_controller import AppController
 from model.jugador_bd import inicializar_bd
