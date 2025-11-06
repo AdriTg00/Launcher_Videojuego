@@ -1,8 +1,7 @@
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QMainWindow
 from views.VentanaInicio_ui import Ui_launcher
-import resources.resources_rc
-
+from resources import resources_rc
 
 
 

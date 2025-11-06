@@ -128,6 +128,7 @@ class Ui_configuracion(object):
 "    border-radius: 5px;\n"
 "}\n"
 "")
+        self.volumenSFXSlider.setMaximum(100)
         self.volumenSFXSlider.setOrientation(Qt.Orientation.Horizontal)
 
         self.gridLayout.addWidget(self.volumenSFXSlider, 2, 3, 1, 1)

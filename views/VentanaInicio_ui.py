@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
     QPushButton, QSizePolicy, QStatusBar, QWidget)
 import resources.resources_rc
+
 class Ui_launcher(object):
     def setupUi(self, launcher):
         if not launcher.objectName():
@@ -149,7 +150,7 @@ class Ui_launcher(object):
         self.label.setScaledContents(True)
         self.label_5 = QLabel(self.centralwidget)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(120, 180, 163, 52))
+        self.label_5.setGeometry(QRect(140, 530, 163, 52))
         self.label_5.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
@@ -157,36 +158,38 @@ class Ui_launcher(object):
 "    padding: 6px;\n"
 "    letter-spacing: 1px;\n"
 "}")
-        self.comboBox = QComboBox(self.centralwidget)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(220, 180, 152, 52))
-        self.comboBox.setMaximumSize(QSize(180, 50))
-        self.comboBox.setStyleSheet(u"/* --- ComboBox principal --- */\n"
+        self.comboIdioma = QComboBox(self.centralwidget)
+        self.comboIdioma.addItem("")
+        self.comboIdioma.addItem("")
+        self.comboIdioma.addItem("")
+        self.comboIdioma.addItem("")
+        self.comboIdioma.setObjectName(u"comboIdioma")
+        self.comboIdioma.setGeometry(QRect(210, 540, 151, 32))
+        self.comboIdioma.setMaximumSize(QSize(180, 32))
+        self.comboIdioma.setStyleSheet(u"/* === ComboBox fino y elegante === */\n"
 "QComboBox {\n"
 "    font-family: \"Arial\";\n"
-"    font-size: 14px;\n"
+"    font-size: 12px;\n"
 "    font-weight: bold;\n"
-"    padding: 6px 30px 6px 12px;\n"
-"    min-height: 36px;\n"
-"    border-radius: 10px;\n"
+"    padding: 2px 20px 2px 8px;   /* menos aire */\n"
+"    min-height: 22px;            /* \ud83d\udd25 forzado */\n"
+"    max-height: 24px;            /* \ud83d\udd25 forzado */\n"
+"    line-height: 16px;           /* \ud83d\udd25 truco visual */\n"
+"    border-radius: 6px;\n"
 "    background: qlineargradient(\n"
 "        x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"        stop: 0 rgba(246, 226, 143, 255),\n"
-"        stop: 1 rgba(236, 198, 70, 255)\n"
+"        stop: 0 rgba(247, 229, 150, 255),\n"
+"        stop: 1 rgba(235, 200, 80, 255)\n"
 "    );\n"
-"    color: #2b2b2b;              /* texto oscuro, visible */\n"
+"    color: #2b2b2b;\n"
 "    border: 2px solid rgba(150, 110, 30, 0.6);\n"
 "}\n"
 "\n"
-"/* --- Flecha de desplegable --- */\n"
+"/* --- Flecha --- */\n"
 "QComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
-"    width: 36px;\n"
+"    width: 18px;\n"
 "    border: none;\n"
 "    background: transparent;\n"
 "}\n"
@@ -194,39 +197,29 @@ class Ui_launcher(object):
 "QComboBox::down-arrow {\n"
 "    width: 0;\n"
 "    height: 0;\n"
-"    margin-right: 10px;\n"
-"    border-left: 6px solid transparent;\n"
-"    border-right: 6px solid transparent;\n"
-"    border-top: 8px solid rgba(70, 40, 10, 0.9); /* color de la flecha */\n"
-"}\n"
-""
-                        "\n"
-"/* --- Cuando el combo est\u00e1 presionado --- */\n"
-"QComboBox:on {\n"
-"    background: qlineargradient(\n"
-"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"        stop: 0 rgba(240, 210, 110, 255),\n"
-"        stop: 1 rgba(230, 180, 60, 255)\n"
-"    );\n"
+"    margin-right: 6px;\n"
+"    border-left: 5px solid trans"
+                        "parent;\n"
+"    border-right: 5px solid transparent;\n"
+"    border-top: 6px solid rgba(70, 40, 10, 0.9);\n"
 "}\n"
 "\n"
 "/* --- Lista desplegable --- */\n"
 "QComboBox QAbstractItemView {\n"
 "    outline: 0;\n"
-"    background: #fff9e6; /* tono beige claro */\n"
-"    color: #2b2b2b;       /* texto oscuro */\n"
+"    background: #fff9e6;\n"
+"    color: #2b2b2b;\n"
 "    border: 1px solid rgba(150, 110, 30, 0.6);\n"
-"    padding: 6px;\n"
-"    border-radius: 6px;\n"
+"    padding: 2px;\n"
+"    border-radius: 4px;\n"
 "    selection-background-color: rgba(245, 234, 180, 255);\n"
-"    selection-color: black; /* texto visible al seleccionar */\n"
+"    selection-color: black;\n"
 "}\n"
 "\n"
-"/* --- Items de la lista --- */\n"
+"/* --- Items individuales --- */\n"
 "QComboBox::item {\n"
 "    color: #2b2b2b;\n"
-"    background: transparent;\n"
-"    padding: 4px 10px;\n"
+"    padding: 2px 6px;\n"
 "}\n"
 "\n"
 "QComboBox::item:selected {\n"
@@ -254,10 +247,10 @@ class Ui_launcher(object):
         self.salir.setText(QCoreApplication.translate("launcher", u"Salir", None))
         self.label.setText("")
         self.label_5.setText(QCoreApplication.translate("launcher", u"Idioma:", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("launcher", u"Espa\u00f1ol", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("launcher", u"English", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("launcher", u"Fran\u00e7ais", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("launcher", u"Deutsch", None))
+        self.comboIdioma.setItemText(0, QCoreApplication.translate("launcher", u"Espa\u00f1ol", None))
+        self.comboIdioma.setItemText(1, QCoreApplication.translate("launcher", u"English", None))
+        self.comboIdioma.setItemText(2, QCoreApplication.translate("launcher", u"Fran\u00e7ais", None))
+        self.comboIdioma.setItemText(3, QCoreApplication.translate("launcher", u"Deutsch", None))
 
     # retranslateUi
 
