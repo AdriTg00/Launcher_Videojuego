@@ -1,12 +1,14 @@
 from PySide6.QtWidgets import QWidget, QMessageBox
 from views.configuracion_ui import Ui_configuracion
 from model.config_bd import guardar_configuracion
+from translator import TRANSLATIONS
 
 
 
 class configuracion(QWidget):
-    def __init__(self, parent=None):
+    def __init__(self, app_state, parent=None):
         super().__init__(parent)
+        self.app_state = app_state
         self.ui = Ui_configuracion()
         self.ui.setupUi(self)
         self.ui.ventana.setChecked(True)
@@ -20,7 +22,22 @@ class configuracion(QWidget):
         self.actualizar_volumen_sfx()
         #Guardar configuracion
         self.ui.guardar.clicked.connect(self.guardar_configuracion)
+        self.apply_language()
 
+
+    def apply_language(self):
+        """Actualiza todos los textos según el idioma actual."""
+        lang = self.app_state.get("language", "Español")
+        tr = TRANSLATIONS[lang]
+
+        self.setWindowTitle(tr.get("settings_title", "Configuración"))
+        self.ui.VolumenGeneral.setText(tr.get("general_volume", "Volumen general:"))
+        self.ui.VolumenSFX.setText(tr.get("sfx_volume", "Volumen SFX:"))
+        self.ui.Resolucion.setText(tr.get("resolution", "Resolución:"))
+        self.ui.TipoDeVisualizacion.setText(tr.get("view_type", "Tipo de visualización:"))
+        self.ui.ventana.setText(tr.get("windowed", "Ventana"))
+        self.ui.completa.setText(tr.get("fullscreen", "Completa"))
+        self.ui.guardar.setText(tr.get("save_settings", "Guardar configuración"))
 
     def sync_checkboxes(self):
         sender = self.sender()

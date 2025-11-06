@@ -3,16 +3,18 @@ from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QWidget, QMessageBox
 from views.partidasGuardadas_ui import Ui_partidaGuardada
 from model.jugador_bd import cargar_partidas, eliminar_partida as eliminar_partida_bd
+from translator import TRANSLATIONS
 
 
 class cargar(QWidget):
     partida_seleccionada = Signal(int)
 
-    def __init__(self, parent=None):
+    def __init__(self, app_state,  parent=None):
         super().__init__(parent)
         self.ui = Ui_partidaGuardada()
+        self.app_state = app_state
         self.ui.setupUi(self)
-
+        self.apply_language()
         self.mostrar_partidas()
 
     def _safe_disconnect(self, widget):
@@ -52,7 +54,7 @@ class cargar(QWidget):
         # Primero desconectamos handlers anteriores (evita duplicados si refrescas la lista)
         for w in botones + botones_x:
             self._safe_disconnect(w)
-
+        
         # Ahora rellenamos y conectamos de forma segura
         for i, boton in enumerate(botones):
             if i < len(partidas):
@@ -77,6 +79,30 @@ class cargar(QWidget):
     def _on_partida_clicked(self, id_partida):
         print(f"Partida seleccionada: {id_partida}")
         self.partida_seleccionada.emit(id_partida)
+    
+    def apply_language(self):
+        """Actualiza todos los textos de la interfaz según el idioma actual."""
+        lang = self.app_state.get("language", "Español")
+        tr = TRANSLATIONS[lang]
+
+        # Título y etiqueta principal
+        self.setWindowTitle(tr.get("saved_games", "Partidas guardadas:"))
+        self.ui.partidasGuardadas.setText(tr.get("saved_games", "Partidas guardadas:"))
+
+        # Si tienes botones tipo "<Vacío>", actualízalos también:
+        # ⚠️ Ajusta los nombres de los botones según los que tengas en el .ui
+        for boton in [
+            self.ui.x1,
+            self.ui.x2,
+            self.ui.x3,
+            self.ui.x4,
+            self.ui.x5,
+            self.ui.x6,
+            self.ui.x7,
+            self.ui.x8
+        ]:
+            boton.setText(tr.get("empty_slot", "<Vacío>"))
+
 
     def _confirm_eliminar(self, id_partida):
         """Muestra confirmación y si confirma elimina la partida por id."""

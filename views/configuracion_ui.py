@@ -27,9 +27,9 @@ class Ui_configuracion(object):
         configuracion.setStyleSheet(u"background-color: #faf0d6;")
         self.gridLayout = QGridLayout(configuracion)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_3 = QLabel(configuracion)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"QLabel {\n"
+        self.TipoDeVisualizacion = QLabel(configuracion)
+        self.TipoDeVisualizacion.setObjectName(u"TipoDeVisualizacion")
+        self.TipoDeVisualizacion.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
 "    font-weight: bold;\n"
@@ -37,7 +37,7 @@ class Ui_configuracion(object):
 "    letter-spacing: 1px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label_3, 5, 2, 1, 1)
+        self.gridLayout.addWidget(self.TipoDeVisualizacion, 5, 2, 1, 1)
 
         self.volumenSFXSlider = QSlider(configuracion)
         self.volumenSFXSlider.setObjectName(u"volumenSFXSlider")
@@ -137,13 +137,13 @@ class Ui_configuracion(object):
 
         self.gridLayout.addItem(self.horizontalSpacer_3, 5, 5, 1, 1)
 
-        self.label_2 = QLabel(configuracion)
-        self.label_2.setObjectName(u"label_2")
+        self.Resolucion = QLabel(configuracion)
+        self.Resolucion.setObjectName(u"Resolucion")
         font = QFont()
         font.setFamilies([u"Segoe UI"])
         font.setBold(True)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet(u"QLabel {\n"
+        self.Resolucion.setFont(font)
+        self.Resolucion.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
 "    font-weight: bold;\n"
@@ -151,7 +151,7 @@ class Ui_configuracion(object):
 "    letter-spacing: 1px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label_2, 4, 2, 1, 1)
+        self.gridLayout.addWidget(self.Resolucion, 4, 2, 1, 1)
 
         self.guardar = QPushButton(configuracion)
         self.guardar.setObjectName(u"guardar")
@@ -272,9 +272,9 @@ class Ui_configuracion(object):
 
         self.gridLayout.addWidget(self.resolucion, 4, 3, 1, 1)
 
-        self.label_4 = QLabel(configuracion)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setStyleSheet(u"QLabel {\n"
+        self.VolumenSFX = QLabel(configuracion)
+        self.VolumenSFX.setObjectName(u"VolumenSFX")
+        self.VolumenSFX.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
 "    font-weight: bold;\n"
@@ -282,7 +282,7 @@ class Ui_configuracion(object):
 "    letter-spacing: 1px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label_4, 2, 2, 1, 1)
+        self.gridLayout.addWidget(self.VolumenSFX, 2, 2, 1, 1)
 
         self.volumenGeneralSlider = QSlider(configuracion)
         self.volumenGeneralSlider.setObjectName(u"volumenGeneralSlider")
@@ -412,10 +412,10 @@ class Ui_configuracion(object):
 
         self.gridLayout.addItem(self.horizontalSpacer_2, 4, 0, 1, 1)
 
-        self.label = QLabel(configuracion)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font)
-        self.label.setStyleSheet(u"QLabel {\n"
+        self.VolumenGeneral = QLabel(configuracion)
+        self.VolumenGeneral.setObjectName(u"VolumenGeneral")
+        self.VolumenGeneral.setFont(font)
+        self.VolumenGeneral.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
 "    font-weight: bold;\n"
@@ -423,7 +423,7 @@ class Ui_configuracion(object):
 "    letter-spacing: 1px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.VolumenGeneral, 1, 2, 1, 1)
 
         self.completa = QCheckBox(configuracion)
         self.completa.setObjectName(u"completa")
@@ -532,8 +532,8 @@ class Ui_configuracion(object):
 
     def retranslateUi(self, configuracion):
         configuracion.setWindowTitle(QCoreApplication.translate("configuracion", u"Configuracion", None))
-        self.label_3.setText(QCoreApplication.translate("configuracion", u"Tipo de visualizaci\u00f3n:", None))
-        self.label_2.setText(QCoreApplication.translate("configuracion", u"Resoluci\u00f3n:", None))
+        self.TipoDeVisualizacion.setText(QCoreApplication.translate("configuracion", u"Tipo de visualizaci\u00f3n:", None))
+        self.Resolucion.setText(QCoreApplication.translate("configuracion", u"Resoluci\u00f3n:", None))
         self.guardar.setText(QCoreApplication.translate("configuracion", u"Guardar configuraci\u00f3n", None))
         self.resolucion.setItemText(0, QCoreApplication.translate("configuracion", u"640x480", None))
         self.resolucion.setItemText(1, QCoreApplication.translate("configuracion", u"960x540", None))
@@ -541,10 +541,10 @@ class Ui_configuracion(object):
         self.resolucion.setItemText(3, QCoreApplication.translate("configuracion", u"1920x1080", None))
 
         self.resolucion.setPlaceholderText("")
-        self.label_4.setText(QCoreApplication.translate("configuracion", u"Volumen SFX:", None))
+        self.VolumenSFX.setText(QCoreApplication.translate("configuracion", u"Volumen SFX:", None))
         self.volumenSFX.setText(QCoreApplication.translate("configuracion", u"TextLabel", None))
         self.volumenGeneral.setText(QCoreApplication.translate("configuracion", u"TextLabel", None))
-        self.label.setText(QCoreApplication.translate("configuracion", u"Volumen general:", None))
+        self.VolumenGeneral.setText(QCoreApplication.translate("configuracion", u"Volumen general:", None))
         self.completa.setText(QCoreApplication.translate("configuracion", u"Completa", None))
         self.ventana.setText(QCoreApplication.translate("configuracion", u"Ventana ", None))
     # retranslateUi

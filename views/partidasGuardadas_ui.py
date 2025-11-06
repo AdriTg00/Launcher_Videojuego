@@ -189,10 +189,10 @@ class Ui_partidaGuardada(object):
 
         self.gridLayout.addItem(self.verticalSpacer_2, 10, 1, 1, 1)
 
-        self.label = QLabel(partidaGuardada)
-        self.label.setObjectName(u"label")
-        self.label.setMaximumSize(QSize(500, 300))
-        self.label.setStyleSheet(u"QLabel {\n"
+        self.partidasGuardadas = QLabel(partidaGuardada)
+        self.partidasGuardadas.setObjectName(u"partidasGuardadas")
+        self.partidasGuardadas.setMaximumSize(QSize(500, 300))
+        self.partidasGuardadas.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 30px;\n"
 "    font-weight: bold;\n"
@@ -200,7 +200,7 @@ class Ui_partidaGuardada(object):
 "    letter-spacing: 1px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.label, 0, 1, 2, 1)
+        self.gridLayout.addWidget(self.partidasGuardadas, 0, 1, 2, 1)
 
         self.x3 = QPushButton(partidaGuardada)
         self.x3.setObjectName(u"x3")
@@ -576,7 +576,7 @@ class Ui_partidaGuardada(object):
         self.partidaGuardada5.setText(QCoreApplication.translate("partidaGuardada", u"<Vacio>", None))
         self.x8.setText(QCoreApplication.translate("partidaGuardada", u"X", None))
         self.x4.setText(QCoreApplication.translate("partidaGuardada", u"X", None))
-        self.label.setText(QCoreApplication.translate("partidaGuardada", u"Partidas guardadas:", None))
+        self.partidasGuardadas.setText(QCoreApplication.translate("partidaGuardada", u"Partidas guardadas:", None))
         self.x3.setText(QCoreApplication.translate("partidaGuardada", u"X", None))
         self.x2.setText(QCoreApplication.translate("partidaGuardada", u"X", None))
         self.x1.setText(QCoreApplication.translate("partidaGuardada", u"X", None))

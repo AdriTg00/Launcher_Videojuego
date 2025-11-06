@@ -148,10 +148,10 @@ class Ui_launcher(object):
         self.label.setGeometry(QRect(360, 330, 181, 201))
         self.label.setPixmap(QPixmap(u":/imagenes/images/cerdito.png"))
         self.label.setScaledContents(True)
-        self.label_5 = QLabel(self.centralwidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(140, 530, 163, 52))
-        self.label_5.setStyleSheet(u"QLabel {\n"
+        self.idioma = QLabel(self.centralwidget)
+        self.idioma.setObjectName(u"idioma")
+        self.idioma.setGeometry(QRect(140, 530, 163, 52))
+        self.idioma.setStyleSheet(u"QLabel {\n"
 "    color: #3C3C3C;\n"
 "    font-size: 11px;\n"
 "    font-weight: bold;\n"
@@ -246,7 +246,7 @@ class Ui_launcher(object):
         self.opciones.setText(QCoreApplication.translate("launcher", u"Opciones", None))
         self.salir.setText(QCoreApplication.translate("launcher", u"Salir", None))
         self.label.setText("")
-        self.label_5.setText(QCoreApplication.translate("launcher", u"Idioma:", None))
+        self.idioma.setText(QCoreApplication.translate("launcher", u"Idioma:", None))
         self.comboIdioma.setItemText(0, QCoreApplication.translate("launcher", u"Espa\u00f1ol", None))
         self.comboIdioma.setItemText(1, QCoreApplication.translate("launcher", u"English", None))
         self.comboIdioma.setItemText(2, QCoreApplication.translate("launcher", u"Fran\u00e7ais", None))
